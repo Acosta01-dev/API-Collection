@@ -14,11 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             else{
 
-            $name = $pokemonData['name'];
-            if ($name === null) {       //In case name input is empty
+            $name = $pokemonData['name']; //In case name input is empty
+            if ($name === null) {       
                 header("location: ../pages/pokemons.php?error");
                 exit;
-            }
+            }//
 
             
             $abilities = $pokemonData['abilities'];
@@ -41,28 +41,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <hr class="rounded">
 
                         <h5 class="card-title">
-                            <?php echo "Name: $name<br>"; ?>
+                            <?php echo "Name: " . ucfirst($name) . "<br>"; ?>
                         </h5>
                         <p class="card-text">
                             <?php echo "Abilities: <br>";
                             foreach ($abilities as $ability) {
+                                 $name = $ability['ability']['name']
                                 ?>
+                                
                             <ul class="ist-group list-group-flush">
                                 <li class="list-group-item">
-                                    <?php echo '- ' . $ability['ability']['name'] . '<br>'; ?>
+                                    <?php // echo '- ' . $ability['ability']['name'] . '<br>';
+                                        echo "● " . ucfirst($name) . "<br>";         
+                                    
+                                    ?>
                                 </li>
                             </ul>
                             <?php
 
                             }
 
-                            echo "Forms: <br>";
+                            echo "Types: <br>";
                             foreach ($types as $type) {
-
+                                $name = $type['type']['name'];
                                 ?>
                             <ul class="ist-group list-group-flush">
                                 <li class="list-group-item">
-                                    <?php echo "- {$type['type']['name']}<br>"; ?>
+                                    <?php // echo "- {$type['type']['name']}<br>";
+                                             echo "● " . ucfirst($name) . "<br>";                                    
+                                             ?>
                                 </li>
                             </ul>
                             <?php
