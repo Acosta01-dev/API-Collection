@@ -33,7 +33,7 @@ if (isset($_GET['name'])) {
     // Decode the JSON response into an associative array
     $result = json_decode($response, true);
 
-    // Iterate through the results and display relevant information
+    // Iterate through the results and display relevant information 
     if (isset($result['items'])) {
         foreach ($result['items'] as $book) {
             ?>
@@ -145,7 +145,7 @@ if (isset($_GET['name'])) {
 
 
         ?>
-        <div class="d-flex align-items-center justify-content-center ">
+        <div class="d-flex align-items-center justify-content-center">
             <?php
             if ($startIndex > 0) {
                 echo '<a href="../pages/books.php?page=back&startIndex=' . $startIndex . '&name=' . urlencode($query) . '" class="btn btn-primary">Back</a>';

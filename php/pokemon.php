@@ -2,12 +2,18 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['pokemons'])) {
+            // Get the Pokemon name from the form
             $pokemonName = $_POST['pokename'];
+            // Get the Pokemon name from the form
             $url = "https://pokeapi.co/api/v2/pokemon/$pokemonName";
+
+            // Fetching data from the API
             $response = @file_get_contents($url);
+                
+             // Fetching data from the API
             $pokemonData = json_decode($response, true);
 
-           
+            // Check if the API request was successful
             if ($response === false) {
                 header("location:../pages/pokemons.php?error");
                 exit;
@@ -34,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="col">
                 <div class="card my-5  mx-auto" style='width:20rem;'>
+                    <!-- Display the Pokemon image -->
                     <div class="card-image-wrapper">
                         <img src="<?php echo $imageUrl ?>" class="card-img-top img-fluid" alt="...">
                     </div>

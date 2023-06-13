@@ -17,12 +17,12 @@
     <header>
         <nav class="navbar bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand  mr-auto" href="../index.php">
+                <a class="navbar-brand  mr-auto" href="#">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" alt="Logo"
                         class="d-inline-block align-text-top " style='height:3rem;'>
 
                 </a>
-                <a href='../index.php' class='btn btn-dark'>Go Back</a>
+                <a href='../index.html' class='btn btn-dark'>Go Back</a>
             </div>
         </nav>
     </header>

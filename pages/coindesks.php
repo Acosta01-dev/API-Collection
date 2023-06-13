@@ -22,7 +22,7 @@
                         class="d-inline-block align-text-top" style='height:3rem;'>
 
                 </a>
-                <a href='../index.php' class='btn btn-dark'>Go Back</a>
+                <a href='../index.html' class='btn btn-dark'>Go Back</a>
             </div>
         </nav>
     </header>
