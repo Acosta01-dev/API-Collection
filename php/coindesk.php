@@ -5,16 +5,23 @@ $url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,moner
 
 // Fetching data from the API
 $response = @file_get_contents($url);
+
+if ($response === false) {
+    die('Error fetching data from the API');
+}
+
 $data = json_decode($response, true);
+
+if ($data === null) {
+    die('Error decoding JSON');
+}
 
 // Extracting individual cryptocurrency prices
 $bitcoinPrice = $data['bitcoin']['usd'];
 //$ethereumPrice = $data['ethereum']['usd'];
 $moneroPrice = $data['monero']['usd'];
 
-
 ?>
-
 
 <div class="card m-3 d-flex justify-content-center " style="max-width: 540px;">
     <div class="row g-0">
